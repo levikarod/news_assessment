@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 crypto_json = open("cryptos.json", "r")
 crypto_dict = json.load(crypto_json)
 asset_alert = ["BTC","ETH"]
+# Set configuration for every source
 Feeds = [
     {
         "link":"https://cointelegraph.com/rss",
