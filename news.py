@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 crypto_json = open("cryptos.json", "r")
 crypto_dict = json.load(crypto_json)
 asset_alert = ["BTC","ETH"]
+webhook = "LLENAR"
 # Set configuration for every source
 Feeds = [
     {
@@ -127,7 +128,7 @@ class Discord_Alert:
 
     def send_alert(self):
         """Sends alert POST to the webhook"""
-        alert = requests.post("https://discord.com/api/webhooks/942954284729901107/od8Xeo-igzTxYtsKVJwGAZFwANKe8bNSH6hwvIbHv1TnIX0tKEi16F9XRknKPrTtiHFH", json = self.alert_dict)
+        alert = requests.post(webhook, json = self.alert_dict)
         return alert
         
 def news_check():
